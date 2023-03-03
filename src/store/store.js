@@ -15,7 +15,7 @@ const store = createStore({
       state.results = payload
     },
     addToCart(state, payload) {
-      let found = state.cart.find(item=>item.artistId===payload.artistId)
+      let found = state.cart.find(item=>item.collectionId===payload.collectionId)
       if(found){
         found.quantity++
       }
