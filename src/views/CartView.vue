@@ -1,20 +1,23 @@
 <template>
   <div>
-    <button @click="$router.go(-1)">Back</button>
-    <h2>Your cart:</h2>
-    <div v-for="result in $store.state.cart" :key="result.collectionId">
-        <p>{{ result.collectionName }}</p>
+    <button class="btn btn-back" @click="$router.go(-1)">Back</button>
+    <div class="cart">
+      <h2>Your cart:</h2>
+      <div class="cart-item" v-for="result in $store.state.cart" :key="result.collectionId">
+        <h3>{{ result.collectionName }}</h3>
+        <p>{{ result.collectionPrice }}</p>
         <div>
           <img :src="result.artworkUrl100" alt="image">
         </div>
-        <div>
+        <div class="cart-qty">
           <p>Quantity: {{ result.quantity }}</p>
-          <button @click="result.quantity++">+</button>
-          <button @click="result.quantity>0 ? result.quantity-- : null">-</button>
+          <button class="btn btn-qty" @click="result.quantity++">+</button>
+          <button class="btn btn-qty" @click="result.quantity>0 ? result.quantity-- : null">-</button>
         </div>
-          <button @click="removeItem(result)">Remove from cart</button>
+          <button class="btn btn-remove" @click="removeItem(result)">Remove from cart</button>
     </div>
-    <div>To pay: {{ fullPrice.toFixed(2) }} $</div>
+    <div class="cart-fullprice">To pay: {{ fullPrice.toFixed(2) }} $</div>
+  </div>
   </div>
 </template>
 

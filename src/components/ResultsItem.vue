@@ -1,21 +1,19 @@
 <template>
   <div>
-    <div>
+    <div class="result-item">
       <h1>{{ result.artistName }}</h1>
-      <div>
-        <p>{{ result.collectionName }}</p>
-        <p>{{ result.primaryGenreName }}</p>
-        <p>{{ result.trackName }}</p>
+      <div class="result-info">
+        <p class="result-info-item">{{ result.collectionName }}</p>
+        <p class="result-info-item">{{ result.primaryGenreName }}</p>
+        <p class="result-info-item">{{ result.trackName }}</p>
       </div>
-      <div>
+      <div class="result-image">
         <img :src="result.artworkUrl100" alt="result image">
       </div>
-      <div>
+      <div class="result-price">
         <p>{{ result.collectionPrice }} $</p>
       </div>
-      <div>
-        <button @click="$store.commit('addToCart',result)">Add to cart</button>
-      </div>
+        <button class="btn btn-success" @click="$store.commit('addToCart',result)">Add to cart</button>
     </div>
   </div>
 </template>

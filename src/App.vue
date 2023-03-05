@@ -1,7 +1,5 @@
 <template>
-  <header>
-    <TheHeader />
-  </header>
+  <TheHeader />
   <RouterView />
 </template>
 
@@ -11,6 +9,14 @@ import TheHeader from './components/TheHeader.vue';
 
 </script>
 
-<style scoped>
-
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  max-width:1250px;
+  margin:0 auto;
+}
 </style>

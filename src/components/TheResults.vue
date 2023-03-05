@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="results-container">
     <div v-if="$store.state.loading">loading</div>
     <ResultsItem v-for="result in $store.state.results" :key="result.artistId" :result="result" />
   </div>
