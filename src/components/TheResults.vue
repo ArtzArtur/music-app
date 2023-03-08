@@ -9,4 +9,9 @@
 import ResultsItem from './ResultsItem.vue'
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.results-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+</style>

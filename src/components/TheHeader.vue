@@ -48,6 +48,9 @@ header {
   font-size: 2.5rem;
   position: relative;
   color: hsl(218, 70%, 60%);
+  &:hover{
+    color: hsl(218, 63%, 38%);
+  }
 }
 
 .cart-count {

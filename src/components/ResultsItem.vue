@@ -24,4 +24,13 @@ const props = defineProps({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.result-item{
+  padding: 1rem;
+  margin:0.25rem;
+  box-shadow: 0px 0px 1px #000;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+</style>

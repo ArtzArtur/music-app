@@ -1,8 +1,9 @@
 <template>
   <div>
-    <form @submit.prevent="fetchData(searchVal)">
-      <input type="text" v-model="searchVal">
-      <button>Search</button>
+    <form class="search-form" @submit.prevent="fetchData(searchVal)">
+      <input type="text" v-model="searchVal"
+      placeholder="Album title">
+      <button class="btn btn-search">Search</button>
       
     </form>
     <TheResults />
@@ -22,4 +23,19 @@ const fetchData = (payload) => {
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.search-form{
+  display: grid;
+  padding: 4rem;
+  place-content: center;
+  & input{
+    padding:0.5rem;
+    &:focus{
+      outline: none;
+    }
+  }
+  & button{
+    margin-block:0.5rem;
+    }
+}
+</style>
