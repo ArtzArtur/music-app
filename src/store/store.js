@@ -27,6 +27,7 @@ const store = createStore({
   },
   actions: {
     async fetchData(context, payload) {
+      context.state.results = []
       context.state.loading = true
       try {
         let data = await fetch(`https://itunes.apple.com/search?term=${payload}&entity=album&media=music`)
@@ -44,6 +45,3 @@ const store = createStore({
 )
 
 export default store
-
-//
-// `https://itunes.apple.com/search?term=nas&entity=album`

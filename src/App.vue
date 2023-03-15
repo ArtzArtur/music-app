@@ -22,7 +22,7 @@ body {
 }
 
 .btn {
-  max-width: 75px;
+  max-width: 95px;
   padding:0.5rem;
   outline: none;
   border: none;
