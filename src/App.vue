@@ -1,16 +1,29 @@
 <template>
-  <TheHeader />
-  <RouterView v-slot="{Component}">
-    <Transition name="fade" mode="out-in">
-      <component :is="Component" :key="$route.path"/>
-    </Transition>
-  </RouterView>
-</template>
+    <TheHeader />
+    <TopBtn v-if="topBtn"/>
+    <RouterView v-slot="{Component}">
+      <Transition name="fade" mode="out-in">
+        <component :is="Component" :key="$route.path"/>
+      </Transition>
+    </RouterView>
+  </template>
 
 <script setup>
+import { onMounted,ref } from 'vue';
 import { RouterView } from 'vue-router'
 import TheHeader from './components/TheHeader.vue';
-
+import TopBtn from './components/TopBtn.vue';
+const topBtn = ref(false)
+onMounted(()=>{
+  window.addEventListener('scroll',()=>{
+    if(document.body.scrollTop > 380 || document.documentElement.scrollTop > 380){
+      topBtn.value=true
+    }
+    else{
+      topBtn.value = false
+    }
+  })
+})
 </script>
 
 <style lang="scss">
@@ -26,6 +39,9 @@ import TheHeader from './components/TheHeader.vue';
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
 }
 body {
   max-width: 1250px;

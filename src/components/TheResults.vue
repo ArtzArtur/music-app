@@ -13,6 +13,7 @@
 <script setup>
 import TheLoader from './TheLoader.vue'
 import ResultsItem from './ResultsItem.vue'
+
 </script>
 
 <style lang="scss" scoped>

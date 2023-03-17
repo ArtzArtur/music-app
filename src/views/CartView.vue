@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="btn btn-back" @click="$router.go(-1)">Back</button>
+    <i class="fas fa-arrow-left btn btn-back" @click="$router.go(-1)"></i>
     <h2>Your cart:</h2>
     <div class="cart">
       <div class="cart-item" v-for="result in $store.state.cart" :key="result.collectionId">

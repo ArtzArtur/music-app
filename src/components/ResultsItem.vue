@@ -1,7 +1,7 @@
 <template>
   <div v-if="result.collectionPrice>0">
     <div class="result-item">
-      <h1>{{ result.artistName }}</h1>
+      <h1>{{ result.artistName.length > 50 ? result.artistName.substring(0,50)+'...' : result.artistName }}</h1>
       <div class="middle-col">
         <p class="result-info">Album: {{ result.collectionName }}</p>
         <p class="result-info">Genre: {{ result.primaryGenreName }}</p>
@@ -48,11 +48,13 @@ const addToCart = (result) => {
   margin: 0.75rem;
   text-align: center;
   box-shadow: 0px 0px 1px var(--color-light);
+  place-content: center;
   & h1 {
     justify-self: center;
     align-self: center;
     font-size: 1.25rem;
     padding: 1rem;
+    overflow: hidden;
   }
 }
 
