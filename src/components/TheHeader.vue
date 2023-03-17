@@ -47,9 +47,9 @@ header {
 .cart-icon {
   font-size: 2.5rem;
   position: relative;
-  color: hsl(218, 70%, 60%);
+  color:var(--color-light);
   &:hover{
-    color: hsl(218, 63%, 38%);
+    color:var(--color-medium);
   }
 }
 
@@ -58,7 +58,7 @@ header {
   width: 1.1rem;
   text-align: center;
   border-radius: 10px;
-  background: hsl(217, 28%, 30%);
+  background: var(--color-dark);
   color: #fff;
   position: absolute;
   font-size: 1rem;

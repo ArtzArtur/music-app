@@ -26,7 +26,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background:hsl(218, 70%, 60%);
+  background:var(--color-light);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 

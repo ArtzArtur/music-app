@@ -1,6 +1,10 @@
 <template>
   <TheHeader />
-  <RouterView />
+  <RouterView v-slot="{Component}">
+    <Transition name="fade" mode="out-in">
+      <component :is="Component" :key="$route.path"/>
+    </Transition>
+  </RouterView>
 </template>
 
 <script setup>
@@ -10,12 +14,19 @@ import TheHeader from './components/TheHeader.vue';
 </script>
 
 <style lang="scss">
+
+:root{
+  --color-light:hsl(218, 70%, 60%);
+  --color-medium:hsl(218, 63%, 38%);
+  --color-dark:hsl(217, 28%, 30%);
+  
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   max-width: 1250px;
   margin: 0 auto;
@@ -27,12 +38,21 @@ body {
   outline: none;
   border: none;
   box-shadow: 0px 0px 1px #000;
-  background-color: hsl(218, 70%, 60%);
+  background-color:var(--color-light);
   color:#fff;
   cursor: pointer;
   margin-inline: auto;
   &:hover{
-    background: hsl(218, 63%, 38%);
+    background: var(--color-dark);
   }
+}
+
+.fade-leave-to,
+.fade-enter-from{
+  opacity:0;
+}
+.fade-leave-active,
+.fade-enter-active{
+  transition: opacity .3s linear;
 }
 </style>
