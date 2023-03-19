@@ -6,7 +6,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/itunesapp/',
+      path: '/music-app/',
       name: 'home',
       component: HomeView
     },
