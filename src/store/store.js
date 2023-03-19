@@ -38,7 +38,6 @@ const store = createStore({
       try {
         let data = await fetch(`https://itunes.apple.com/search?term=${payload}&entity=album&media=music`)
         let resp = await data.json()
-        console.log(resp)
         context.commit('fetchData', resp.results)
       }
       catch (err) {
